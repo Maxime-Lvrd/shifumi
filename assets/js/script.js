@@ -2,6 +2,18 @@ const jeu1 = document.querySelector('.jeu1');
 const jeu2 = document.querySelector('.jeu2');
 const results = document.querySelector('.results');
 const popup = document.querySelector('.modal-header');
+const playerScore = document.querySelector('.player-score');
+const pcScore = document.querySelector('.pc-score');
+var score1 = 0;
+var addPlayerScore = function () {
+    score1++;
+    playerScore.textContent = score1;
+};
+var score2 = 0;
+var addPcScore = function () {
+    score2++;
+    pcScore.textContent = score2;
+};
 
 var getRandom = function () {
     return Math.floor((Math.random()*3)+1);
@@ -43,9 +55,11 @@ button.onclick = function () {
     } else if (jeu1.alt == 'pierre' && jeu2.alt == 'feuille' || jeu1.alt == 'feuille' && jeu2.alt == 'ciseaux' || jeu1.alt == 'ciseaux' && jeu2.alt == 'pierre') {
         results.textContent = 'PERDU !';
         popup.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
+        addPcScore();
     } else if (jeu1.alt == 'pierre' && jeu2.alt == 'ciseaux' || jeu1.alt == 'feuille' && jeu2.alt == 'pierre' || jeu1.alt == 'ciseaux' && jeu2.alt == 'feuille') {
         results.textContent = 'GAGNÉ !';
         popup.style.backgroundColor = 'rgba(0, 255, 13, 0.3)';
+        addPlayerScore();
     } else {
         results.textContent = 'OUPS, TU AS OUBLIÉ DE FAIRE TON CHOIX !';
         popup.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';

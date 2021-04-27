@@ -11,12 +11,13 @@ body {
 .container-fluid {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 .cube {
     border: 1px white solid;
     border-radius: 15px;
-    width: 200px;
-    height: 200px;
+    width: 20rem;
+    height: 20rem;
     margin: 25px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 2px 0 3px white;
@@ -39,6 +40,15 @@ button {
     background-color: rgba(224, 255, 255, 0.4);
     box-shadow: 0 0 5px white;
     font-family: 'Original Surfer', cursive;
+}
+.font {
+    font-family: 'Original Surfer', cursive;
+    font-size: 35px;
+    color: white;
+}
+.tableau {
+    background-color: rgba(75, 85, 95, 0.7);
+    box-shadow: 0 0 3px white;
 }
 button:hover {
     transform: scale(1.1);
@@ -68,9 +78,17 @@ h1 {
     font-size: 25px;
     color: white;
     position: fixed;
-    top: 35%;
+    top: 40%;
     left: 10%;
     margin: 0;
     border: 1px solid white;
     border-radius: 15px;
 }
+
+@media only screen and (max-width: 600px) {
+    .cube {
+        width: 10rem;
+        height: 10rem;
+        margin: 10px;
+    }
+  }
